@@ -1,46 +1,99 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              " be iMproved
+syntax on
+set smartindent
+" if has("vms")
+      set nobackup	
+" else	  
+"    set backup
+" endif
+set ruler
+set showcmd
+filetype plugin indent on
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set foldcolumn=2
+set incsearch
+set foldmethod=marker
+" set backupdir=~/backup/vim
+" set backupext=.bak
+set showmatch
+set number
+set background=dark
+set csto=0
+set helplang=en
+set hls
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+map <F3> <Esc>:wnext <Enter>
+map <F4> <Esc>:wprevious <Enter>
+map <F2> <Esc>:w <Enter> <Esc>:make <Enter>
+map vi' <Esc>?'<CR>lv/'<CR>h
+map vi" <Esc>?"<CR>lv/"<CR>h
+map va' <Esc>?'<CR>v/'<CR>
+map va" <Esc>?"<CR>v/"<CR>
+map vix <Esc>?><CR>lv/<<CR>h
+map vi= <ESC>?\s\+\S\+\s*=\s*\S\+<CR>lv/=<CR>/\S<CR>/[\s<>\n]<CR>h
+map vi/ <Esc>?\/<CR>l<Esc>v/\/<CR>h
+map vt) <ESC>v/)<CR>h
+map vt' <ESC>v/'<CR>h
+map vt" <ESC>v/"<CR>h
+map vt; <ESC>v/;<CR>h
+map vt, <ESC>v/,<CR>h
+map vt} <ESC>v/}<CR>h
+nmap <F8> :TagbarToggle<CR>
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+noremap <silent> <F11> :cal VimCommanderToggle()<CR>
+noremap \cmd :cal VimCommanderToggle()<CR>
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" install vim-go
-Plugin 'fatih/vim-go'
+noremap \dc <Esc>:Dox<CR>
+noremap \dd <Esc>:DoxUndoc<CR>
+noremap \da <Esc>:DoxAuthor<CR>
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+if v:version >= 700
+    :map <C-w>p :tabprevious<cr>
+    :nmap <C-w>t :tabnew<cr>
+    :imap <C-w>t <ESC>:tabnew<cr>
+endif
+
+colorscheme desert
+set backspace=indent,eol,start
+
+set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+
+
+" Vim-Plug
+" https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+" Multiple Plug commands can be written in a single line using | separators
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" On-demand loading
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-master branch
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin options
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" " Plugin outside ~/.vim/plugged with post-update hook
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Unmanaged plugin (manually installed and updated)
+" Plug '~/my-prototype-plugin'
+
+" Initialize plugin system
+call plug#end()

@@ -56,7 +56,9 @@ plugins=(git )
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+#
+# ===特殊系统变量在 .bashrc中定义===
+# 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -89,5 +91,3 @@ export GOPATH="$HOME/go"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias goversion162="switchgoversion 1.6.2"
-alias goversion187="switchgoversion 1.8.7"
