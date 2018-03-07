@@ -57,6 +57,7 @@ if v:version >= 700
 endif
 
 colorscheme desert
+hi Search cterm=NONE ctermfg=Red ctermbg=LightGrey
 set backspace=indent,eol,start
 
 set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
@@ -84,7 +85,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'fatih/vim-go', { 'tag': 'v1.4' }
 
 " Plugin options
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
