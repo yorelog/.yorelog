@@ -60,7 +60,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 #
-# ===特殊系统变量在 .bashrc中定义===
+# ===特殊系统变量在 .user_path中定义===
 # 
 # export MANPATH="/usr/local/man:$MANPATH"
 
