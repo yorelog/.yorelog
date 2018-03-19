@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-if [ -f ~/.user_path ]; then
+if [ -r ~/.user_path ]; then
 	. ~/.user_path
 fi
 
