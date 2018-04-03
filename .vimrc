@@ -1,5 +1,27 @@
+" Vim-Plug
+" https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugged')
+" colorschemes
+Plug 'flazz/vim-colorschemes'
+" NERDTree
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'junegunn/vim-easy-align'
+Plug 'Valloric/YouCompleteMe'
+Plug 'https://github.com/tmhedberg/SimpylFold'
+Plug 'fatih/vim-go', { 'tag': 'v1.4' }
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+" Initialize plugin system
+call plug#end()
+
 set nocompatible              " be iMproved
+" Color Theme
 syntax on
+"set background=dark
+colorscheme corporation
+
 set smartindent
 set ruler
 set showcmd
@@ -23,9 +45,6 @@ let mapleader = "\<Space>"
 :nmap <C-w>t :tabnew<cr>
 :imap <C-w>t <ESC>:tabnew<cr>
 
-" Color Theme
-colorscheme desert
-set background=dark
 hi Search cterm=NONE ctermfg=Red ctermbg=LightGrey
 set backspace=indent,eol,start
 " Encoding
@@ -34,16 +53,6 @@ set termencoding=utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 
-
-" Vim-Plug
-" https://github.com/junegunn/vim-plug
-call plug#begin('~/.vim/plugged')
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-
-" NERDTree
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 " NERDTree Settings 
 
 " NERDTree 开关
@@ -52,31 +61,4 @@ noremap <leader>m :NERDTreeToggle<cr>
 let NERDTreeShowBookmarks=1  
 
 
-Plug 'junegunn/vim-easy-align'
-Plug 'Valloric/YouCompleteMe'
-Plug 'https://github.com/tmhedberg/SimpylFold'
-" Any valid git URL is allowed
-" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-" Multiple Plug commands can be written in a single line using | separators
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-" On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
-" Using a non-master branch
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': 'v1.4' }
-
-" Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-"
-" " Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"
-" Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
-
-" Initialize plugin system
-call plug#end()
