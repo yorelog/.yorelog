@@ -6,6 +6,7 @@ BASEDIR=$(pwd)
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # cp zsh config file
+rm $HOME/.zshrc
 ln -s $BASEDIR/.zshrc $HOME/.zshrc
 
 if [ ! -e $HOME/.user_path ];then

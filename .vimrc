@@ -7,6 +7,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'Valloric/YouCompleteMe'
 Plug 'https://github.com/tmhedberg/SimpylFold'
@@ -56,9 +58,14 @@ set fileencoding=utf-8
 " NERDTree Settings 
 
 " NERDTree 开关
-noremap <leader>m :NERDTreeToggle<cr>
+nnoremap <leader>m :NERDTreeToggle<cr>
+nnoremap <leader>n :NERDTreeFind<cr>
 " Show bookmark of NERDTree
-let NERDTreeShowBookmarks=1  
+let NERDTreeShowBookmarks=1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
 
 
 
