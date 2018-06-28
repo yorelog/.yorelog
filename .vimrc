@@ -10,7 +10,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'Valloric/YouCompleteMe'
 Plug 'https://github.com/tmhedberg/SimpylFold'
 Plug 'fatih/vim-go', { 'tag': 'v1.4' }
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
