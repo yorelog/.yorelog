@@ -2,7 +2,7 @@
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 " colorschemes
-Plug 'flazz/vim-colorschemes'
+Plug 'rafi/awesome-vim-colorschemes'
 " NERDTree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -21,7 +21,7 @@ set nocompatible              " be iMproved
 " Color Theme
 syntax on
 "set background=dark
-colorscheme corporation
+colorscheme twilight256
 
 set smartindent
 set ruler
