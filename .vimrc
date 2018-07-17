@@ -23,6 +23,9 @@ call plug#end()
 set nocompatible                " Enables us Vim specific features
 filetype off                    " Reset filetype detection first ...
 filetype plugin indent on       " ... and enable filetype detection
+set tabstop=4                   " show existing tab with 4 spaces width
+set shiftwidth=4             	" when indenting with '>', use 4 spaces width
+set expandtab			" On pressing tab, insert 4 spaces
 set ttyfast                     " Indicate fast terminal conn for faster redraw
 set ttymouse=xterm2             " Indicate terminal type for mouse codes
 set ttyscroll=3                 " Speedup scrolling
@@ -87,5 +90,7 @@ let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 
-
+" Jump
+" jump back ctrl + o
+" golang  gd: jump to definition
 
