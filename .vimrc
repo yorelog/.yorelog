@@ -1,3 +1,4 @@
+filetype off                    " Reset filetype detection first ...
 " Vim-Plug
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
@@ -7,13 +8,19 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+Plug 'elzr/vim-json' " json format
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim' " fantastic functions
 Plug 'junegunn/vim-easy-align'
+Plug 'vimwiki/vimwiki'
 Plug 'https://github.com/tmhedberg/SimpylFold'
 Plug 'fatih/vim-go', { 'tag': 'v1.9' }
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-
+Plug 'maralla/completor.vim' " complete framework
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' } " gocode library
+"Plug 'Shougo/deoplete.nvim' " Asynchronous completion framework
+"Plug 'zchee/deoplete-go', { 'do': 'make'} " Asynchronous Go completion
+"Plug 'roxma/nvim-yarp'  " deoplete-go dependency
+"Plug 'roxma/vim-hug-neovim-rpc'  " deoplete-go dependency
 " Initialize plugin system
 call plug#end()
 
@@ -21,7 +28,6 @@ call plug#end()
 "      Settings      "
 """"""""""""""""""""""
 set nocompatible                " Enables us Vim specific features
-filetype off                    " Reset filetype detection first ...
 filetype plugin indent on       " ... and enable filetype detection
 set tabstop=4                   " show existing tab with 4 spaces width
 set shiftwidth=4             	" when indenting with '>', use 4 spaces width
@@ -90,7 +96,25 @@ let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 
+" deoplete Settings
+"set completeopt+=noselect
+"let g:python3_host_prog  = '/usr/bin/python3'
+"let $NVIM_PYTHON_LOG_FILE="~/tmp/nvim_log"
+"let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode' " gocode binary
+"let g:deoplete#sources#go#package_dot = 1   " insert .  automatically after package selected
+
+" completor Settings
+let g:completor_gocode_binary = $GOPATH.'/bin/gocode' " gocode binary
+
+"
+" vimwiki Settings
+let g:vimwiki_list = [{'path': '~/.local/vimwiki/'}]
+
 " Jump
 " jump back ctrl + o
 " golang  gd: jump to definition
 
+" tools
+command Today strftime('%Y%m%d')
