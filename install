@@ -1,0 +1,5 @@
+wget --no-check-certificate https://gitee.com/yorelog/env/repository/archive/env.zip
+unzip env
+mv env .yorelog
+cd .yorelog
+./initbash.sh
