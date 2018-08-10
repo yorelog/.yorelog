@@ -1,9 +1,10 @@
 #!/bin/bash
 BASEDIR=$(pwd)
-BINDIR=$BASEDIR/bin
+BINDIR=$HOME/bin
+[ ! -d $BINDIR ] && mkdir $BINDIR
 
 echo '[ -f '$BASEDIR'/.bashrc ] && source '$BASEDIR'/.bashrc' >> $HOME/.bashrc
-echo 'export PATH='$BINDIR':$PATH' >> $HOME/.bashrc
+#echo 'export PATH='$BINDIR':$PATH' >> $HOME/.bashrc
 
 # install fasd
 cd $BINDIR
