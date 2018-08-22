@@ -17,10 +17,6 @@ Plug 'https://github.com/tmhedberg/SimpylFold'
 Plug 'fatih/vim-go', { 'tag': 'v1.9' }
 Plug 'maralla/completor.vim' " complete framework
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' } " gocode library
-"Plug 'Shougo/deoplete.nvim' " Asynchronous completion framework
-"Plug 'zchee/deoplete-go', { 'do': 'make'} " Asynchronous Go completion
-"Plug 'roxma/nvim-yarp'  " deoplete-go dependency
-"Plug 'roxma/vim-hug-neovim-rpc'  " deoplete-go dependency
 " Initialize plugin system
 call plug#end()
 
