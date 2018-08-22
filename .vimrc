@@ -96,17 +96,9 @@ let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 
-" deoplete Settings
-"set completeopt+=noselect
-"let g:python3_host_prog  = '/usr/bin/python3'
-"let $NVIM_PYTHON_LOG_FILE="~/tmp/nvim_log"
-"let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
-"let g:deoplete#enable_at_startup = 1
-"let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode' " gocode binary
-"let g:deoplete#sources#go#package_dot = 1   " insert .  automatically after package selected
 
 " completor Settings
-let g:completor_gocode_binary = $GOPATH.'/bin/gocode' " gocode binary
+let g:completor_gocode_binary = $GOPATH.'/bin/gocode' " gocode binary for golang
 
 "
 " vimwiki Settings
