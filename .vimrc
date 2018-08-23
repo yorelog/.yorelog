@@ -95,6 +95,7 @@ let NERDTreeAutoDeleteBuffer = 1
 
 " completor Settings
 let g:completor_gocode_binary = $GOPATH.'/bin/gocode' " gocode binary for golang
+let g:completor_python_binary = $HOME.'/.yorelog/bin/python' " python
 
 "
 " vimwiki Settings
