@@ -54,7 +54,7 @@ ZSH_THEME="frisk"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fasd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,4 +93,6 @@ export LC_CTYPE='zh_CN.UTF-8'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Config fzf
+alias preview="fzf --preview 'cat {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

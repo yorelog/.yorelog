@@ -17,10 +17,6 @@ Plug 'https://github.com/tmhedberg/SimpylFold'
 Plug 'fatih/vim-go', { 'tag': 'v1.9' }
 Plug 'maralla/completor.vim' " complete framework
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' } " gocode library
-"Plug 'Shougo/deoplete.nvim' " Asynchronous completion framework
-"Plug 'zchee/deoplete-go', { 'do': 'make'} " Asynchronous Go completion
-"Plug 'roxma/nvim-yarp'  " deoplete-go dependency
-"Plug 'roxma/vim-hug-neovim-rpc'  " deoplete-go dependency
 " Initialize plugin system
 call plug#end()
 
@@ -96,17 +92,10 @@ let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 
-" deoplete Settings
-"set completeopt+=noselect
-"let g:python3_host_prog  = '/usr/bin/python3'
-"let $NVIM_PYTHON_LOG_FILE="~/tmp/nvim_log"
-"let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
-"let g:deoplete#enable_at_startup = 1
-"let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode' " gocode binary
-"let g:deoplete#sources#go#package_dot = 1   " insert .  automatically after package selected
 
 " completor Settings
-let g:completor_gocode_binary = $GOPATH.'/bin/gocode' " gocode binary
+let g:completor_gocode_binary = $GOPATH.'/bin/gocode' " gocode binary for golang
+let g:completor_python_binary = $HOME.'/.yorelog/bin/python' " python
 
 "
 " vimwiki Settings
