@@ -12,7 +12,6 @@ Plug 'elzr/vim-json' " json format
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " fantastic functions
 Plug 'junegunn/vim-easy-align'
-Plug 'vimwiki/vimwiki'
 Plug 'https://github.com/tmhedberg/SimpylFold'
 Plug 'fatih/vim-go', { 'tag': 'v1.9' }
 Plug 'maralla/completor.vim' " complete framework
@@ -68,14 +67,17 @@ let mapleader = "\<Space>"	" leader key
 " Enable to copy to clipboard for operations like yank, delete, change and put
 " http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
 if has('unnamedplus')
-  set clipboard^=unnamed
-  set clipboard^=unnamedplus
+    set clipboard^=unnamed
+    set clipboard^=unnamedplus
 endif
 
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
-  set undofile
-  set undodir=~/.config/vim/tmp/undo//
+    if !isdirectory("~/.config/vim/tmp/undo")
+        call mkdir("~/.config/vim/tmp/undo","p")
+    endif
+    set undofile
+    set undodir=~/.config/vim/tmp/undo//
 endif
 
 hi Search cterm=NONE ctermfg=Red ctermbg=LightGrey
@@ -95,11 +97,15 @@ let NERDTreeAutoDeleteBuffer = 1
 
 " completor Settings
 let g:completor_gocode_binary = $GOPATH.'/bin/gocode' " gocode binary for golang
-let g:completor_python_binary = $HOME.'/.yorelog/bin/python' " python
 
-"
-" vimwiki Settings
-let g:vimwiki_list = [{'path': '~/.local/vimwiki/'}]
+if !isdirectory($HOME.'/.yorelog/bin')
+    call mkdir($HOME.'/.yorelog/bin','p')
+endif
+let g:completor_python_binary = $HOME.'/.yorelog/bin/python' " python
+if !filereadable($HOME.'/.yorelog/bin/python')
+    let g:completor_python_binary = 'python'
+endif
+
 
 " Jump
 " jump back ctrl + o
