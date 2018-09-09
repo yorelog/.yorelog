@@ -73,8 +73,8 @@ endif
 
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
-    if !isdirectory("~/.config/vim/tmp/undo")
-        call mkdir("~/.config/vim/tmp/undo","p")
+    if !isdirectory($HOME."/.config/vim/tmp/undo")
+        call mkdir($HOME."/.config/vim/tmp/undo","p")
     endif
     set undofile
     set undodir=~/.config/vim/tmp/undo//
