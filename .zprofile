@@ -15,7 +15,15 @@ export PATH=~/bin:~/.src/bin:$PATH
 alias goversion162="switchgoversion 1.6.2"
 alias goversion187="switchgoversion 1.8.7"
 
-
+###################
+#   fasd          #
+###################
+alias a='fasd -a'
+alias s='fasd -si'
+alias sd='fasd -sid'
+alias sf='fasd -sif'
+alias d='fasd -d'
+alias f='fasd -f'
 
 
 
