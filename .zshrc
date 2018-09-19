@@ -55,6 +55,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #
 # ===特殊系统变量在 .zprofile 中定义===
+[ -f ~/.zprofile ] && source ~/.zprofile
 # 
 # export MANPATH="/usr/local/man:$MANPATH"
 
