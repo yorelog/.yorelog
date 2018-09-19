@@ -1,12 +1,16 @@
 #!/bin/bash
-
-BASEDIR=$(dirname "$0")
+SCRIPT=$(readlink -f "$0")
+BASEDIR=$(dirname "$SCRIPT")
 
 # install Oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # cp zsh config file
-rm $HOME/.zshrc
+if [ -e $HOME/.zshrc ];then
+    rm $HOME/.zshrc
+    echo "remove the default .zshrc"
+fi
+
 ln -s $BASEDIR/.zshrc $HOME/.zshrc
 
 if [ ! -e $HOME/.zprofile ];then
