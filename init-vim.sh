@@ -1,6 +1,6 @@
 #!/bin/bash
-
-BASEDIR=$(pwd)
+SCRIPT=$(readlink -f "$0")
+BASEDIR=$(dirname "$SCRIPT")
 
 vimversionneeded=8
 
