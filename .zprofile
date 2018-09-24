@@ -5,15 +5,8 @@
 ###################
 #   变量配置      #
 ###################
-export PATH=$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/bin:$PATH
+export PATH=$HOME/go/bin:/usr/local/bin:$PATH
 export GOPATH="$HOME/go"
-export GOROOT="$HOME/.src/go"
-export GOTOOLDIR="$HOME/.src/go/pkg/tool/linux_amd64"
-
-export PATH=~/bin:~/.src/bin:$PATH
-
-alias goversion162="switchgoversion 1.6.2"
-alias goversion187="switchgoversion 1.8.7"
 
 ###################
 #   fasd          #
