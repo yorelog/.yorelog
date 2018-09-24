@@ -13,7 +13,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " fantastic functions
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tmhedberg/SimpylFold'
-Plug 'fatih/vim-go', { 'tag': 'v1.17' }
+Plug 'fatih/vim-go', { 'tag': 'v1.18' }
 Plug 'maralla/completor.vim' " complete framework
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' } " gocode library
 " Initialize plugin system
