@@ -87,10 +87,6 @@ export LC_CTYPE='zh_CN.UTF-8'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# Config fasd
-
-eval "$(fasd --init auto)"
-
 # Config fzf
 alias preview="fzf --preview 'cat {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

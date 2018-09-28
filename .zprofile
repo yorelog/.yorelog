@@ -11,12 +11,8 @@ export GOPATH="$HOME/go"
 ###################
 #   fasd          #
 ###################
-alias a='fasd -a'
-alias s='fasd -si'
-alias sd='fasd -sid'
-alias sf='fasd -sif'
-alias d='fasd -d'
-alias f='fasd -f'
+eval "$(fasd --init auto)"
+
 
 
 
