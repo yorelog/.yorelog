@@ -11,6 +11,7 @@ export GOPATH="$HOME/go"
 ###################
 #   fasd          #
 ###################
+export PATH=$HOME/.yorelog/bin:$PATH
 eval "$(fasd --init auto)"
 
 
