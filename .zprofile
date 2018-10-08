@@ -14,6 +14,10 @@ export GOPATH="$HOME/go"
 export PATH=$HOME/.yorelog/bin:$PATH
 eval "$(fasd --init auto)"
 
+###################
+#   alias         #
+###################
+alias phpctags='ctags -R --fields=+laimS --languages=php'
 
 
 
