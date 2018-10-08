@@ -55,7 +55,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 #
 # ===特殊系统变量在 .zprofile 中定义===
-[ -f ~/.zprofile ] && source ~/.zprofile
+#[ -f ~/.zprofile ] && source ~/.zprofile
 # 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -87,7 +87,6 @@ export LC_CTYPE='zh_CN.UTF-8'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Config fzf
 alias preview="fzf --preview 'cat {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
