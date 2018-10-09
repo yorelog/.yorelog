@@ -15,6 +15,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tmhedberg/SimpylFold'
 Plug 'fatih/vim-go', { 'tag': 'v1.18' }
 Plug 'maralla/completor.vim' " complete framework
+Plug 'easymotion/vim-easymotion' " easy move and apply change everywhere
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' } " gocode library
 " Initialize plugin system
 call plug#end()
@@ -111,6 +112,9 @@ endif
 " jump back ctrl + o
 " golang  gd: jump to definition
 " PHP generate ctags :  ctags -R --fields=+laimS --languages=php
+
+" Easymotion
+
 
 " tools
 command Today strftime('%Y%m%d')
