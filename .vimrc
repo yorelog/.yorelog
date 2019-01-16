@@ -17,6 +17,9 @@ Plug 'fatih/vim-go', { 'tag': 'v1.18' }
 Plug 'maralla/completor.vim' " complete framework
 Plug 'easymotion/vim-easymotion' " easy move and apply change everywhere
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' } " gocode library
+
+" table edit (mysql result: PAGER vim -)
+Plug 'dhruvasagar/vim-table-mode'
 " Initialize plugin system
 call plug#end()
 
