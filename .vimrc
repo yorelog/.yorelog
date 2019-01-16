@@ -1,3 +1,4 @@
+filetype off                    " Reset filetype detection first ...
 " Vim-Plug
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
@@ -7,13 +8,13 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'elzr/vim-json' " json format
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tmhedberg/SimpylFold'
-Plug 'fatih/vim-go', { 'tag': 'v1.9' }
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'easymotion/vim-easymotion' " easy move and apply change everywhere
 
+" table edit (mysql result: PAGER vim -)
+Plug 'dhruvasagar/vim-table-mode'
 " Initialize plugin system
 call plug#end()
 
@@ -21,7 +22,6 @@ call plug#end()
 "      Settings      "
 """"""""""""""""""""""
 set nocompatible                " Enables us Vim specific features
-filetype off                    " Reset filetype detection first ...
 filetype plugin indent on       " ... and enable filetype detection
 set tabstop=4                   " show existing tab with 4 spaces width
 set shiftwidth=4             	" when indenting with '>', use 4 spaces width
@@ -66,14 +66,17 @@ let mapleader = "\<Space>"	" leader key
 " Enable to copy to clipboard for operations like yank, delete, change and put
 " http://stackoverflow.com/questions/20186975/vim-mac-how-to-copy-to-clipboard-without-pbcopy
 if has('unnamedplus')
-  set clipboard^=unnamed
-  set clipboard^=unnamedplus
+    set clipboard^=unnamed
+    set clipboard^=unnamedplus
 endif
 
 " This enables us to undo files even if you exit Vim.
 if has('persistent_undo')
-  set undofile
-  set undodir=~/.config/vim/tmp/undo//
+    if !isdirectory($HOME."/.config/vim/tmp/undo")
+        call mkdir($HOME."/.config/vim/tmp/undo","p")
+    endif
+    set undofile
+    set undodir=~/.config/vim/tmp/undo//
 endif
 
 hi Search cterm=NONE ctermfg=Red ctermbg=LightGrey
@@ -90,7 +93,14 @@ let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 
+
 " Jump
 " jump back ctrl + o
 " golang  gd: jump to definition
+" PHP generate ctags :  ctags -R --fields=+laimS --languages=php
 
+" Easymotion
+
+
+" tools
+command Today strftime('%Y%m%d')
