@@ -71,6 +71,8 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export TERM='xterm-256color'
 export LANG='zh_CN.UTF-8'
+export LANGUAGE='zh_CN.UTF-8'
+export LC_ALL='zh_CN.UTF-8'
 export LC_CTYPE='zh_CN.UTF-8'
 
 # Compilation flags
