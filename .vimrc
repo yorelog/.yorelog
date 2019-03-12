@@ -112,6 +112,8 @@ endif
 " jump back ctrl + o
 " golang  gd: jump to definition
 " PHP generate ctags :  ctags -R --fields=+laimS --languages=php
+set tags+=tags
+set tags+=../tags
 
 " Easymotion
 
