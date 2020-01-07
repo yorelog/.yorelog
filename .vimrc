@@ -8,6 +8,10 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" UltiSnips
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 Plug 'elzr/vim-json' " json format
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " fantastic functions
@@ -112,6 +116,8 @@ endif
 " jump back ctrl + o
 " golang  gd: jump to definition
 " PHP generate ctags :  ctags -R --fields=+laimS --languages=php
+set tags +=tags
+set tags +=/home/q/php/QFrame/tags
 
 " Easymotion
 
