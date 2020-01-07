@@ -4,7 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="clean"
+ZSH_THEME="bureau"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,7 +48,7 @@ ZSH_THEME="clean"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd go)
+plugins=(git fasd tig go)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,6 +71,8 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export TERM='xterm-256color'
 export LANG='zh_CN.UTF-8'
+export LANGUAGE='zh_CN.UTF-8'
+export LC_ALL='zh_CN.UTF-8'
 export LC_CTYPE='zh_CN.UTF-8'
 
 # Compilation flags
