@@ -1,8 +1,8 @@
 ((!$+ZPLUG_HOME)) && source ./.zplug.zsh
+
 # User configuration
 # ===特殊系统变量在 .zprofile 中定义===
 [ -f ~/.zprofile ] && source ~/.zprofile
-
 export EDITOR='vim'
 export TERM='xterm-256color'
 export LANG='zh_CN.UTF-8'

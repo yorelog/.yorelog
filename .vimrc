@@ -8,15 +8,25 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" UltiSnips
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 Plug 'elzr/vim-json' " json format
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " fantastic functions
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tmhedberg/SimpylFold'
-Plug 'fatih/vim-go', { 'tag': 'v1.18' }
 Plug 'maralla/completor.vim' " complete framework
 Plug 'easymotion/vim-easymotion' " easy move and apply change everywhere
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' } " gocode library
+Plug 'vito-c/jq.vim' " json precessing
+Plug 'fatih/vim-go' " { 'tag': 'v1.18' }
+Plug 'stephpy/vim-yaml'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'eshion/vim-sync'
+
+" table edit (mysql result: PAGER vim -)
+Plug 'dhruvasagar/vim-table-mode'
 " Initialize plugin system
 call plug#end()
 
@@ -95,9 +105,10 @@ let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 
+" vim-yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+let g:indentLine_char = '⦙'
 
-" completor Settings
-let g:completor_gocode_binary = $GOPATH.'/bin/gocode' " gocode binary for golang
 
 if !isdirectory($HOME.'/.yorelog/bin')
     call mkdir($HOME.'/.yorelog/bin','p')
@@ -106,7 +117,13 @@ let g:completor_python_binary = $HOME.'/.yorelog/bin/python' " python
 if !filereadable($HOME.'/.yorelog/bin/python')
     let g:completor_python_binary = 'python'
 endif
+" vim-go
 
+" <space>+r Calls `go run` for the current main package
+au FileType go nmap <leader>r <Plug>(go-run) 
+
+" <space>+i Calls `go imports` for the current package
+au FileType go nmap <leader>i <Plug>(go-imports) 
 
 " Jump
 " jump back ctrl + o
@@ -114,8 +131,11 @@ endif
 " PHP generate ctags :  ctags -R --fields=+laimS --languages=php
 set tags+=tags
 set tags+=../tags
+" vim-sync
+let g:sync_exe_filenames = '.sync;' " Looks backward for a file named ".sync"
+nnoremap <C-U> <ESC>:call SyncUploadFile()<CR>
+nnoremap <C-D> <ESC>:call SyncDownloadFile()<CR>
 
-" Easymotion
 
 
 " tools
