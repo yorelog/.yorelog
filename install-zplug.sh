@@ -1,11 +1,14 @@
 #!/bin/bash
-SCRIPT=$(readlink -f "$0")
-BASEDIR=$(dirname "$SCRIPT")
 
+install_zplug() {
+
+}
 # install Oh my zsh
 if [[ $OSTYPE == *darwin* ]]; then
-    brew install zplug lua # use home brew to install zplug
     export ZPLUG_HOME=/usr/local/opt/zplug
+    if [[! -f $ZPLUG_HOME/init.zsh ]]; then
+        brew install zplug # use home brew to install zplug
+    fi
 fi
 #
 ## cp zsh config file

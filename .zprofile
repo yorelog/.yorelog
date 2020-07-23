@@ -1,41 +1,24 @@
-#
-# /etc/zprofile and ~/.zprofile are run for login shells
-#
+PATH="${HOME}/.yorelog/bin:/usr/local/sbin:${PATH}"
+export GOPATH=$HOME/codes/go
+export GO111MODULE=on
+#export PATH=$GOPATH/bin:$PATH
+export GOPROXY=https://goproxy.cn
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-###################
-#   变量配置      #
-###################
-export PATH=$HOME/go/bin:/usr/local/bin:$PATH
-export GOPATH="$HOME/go"
 
+# ls
+alias ll='ls -al'
+# git
+alias gst='git status'
 ###################
 #   fasd          #
 ###################
-export PATH=$HOME/.yorelog/bin:$PATH
-eval "$(fasd --init auto)"
-
-###################
-#   alias         #
-###################
-alias phpctags='ctags -R --fields=+laimS --languages=php'
-
+alias a='fasd -a'
+alias s='fasd -si'
+alias sd='fasd -sid'
+alias sf='fasd -sif'
+alias d='fasd -d'
+alias f='fasd -f'
 
 
 
-
-
-_src_etc_profile()
-{
-    #  Make /etc/profile happier, and have possible ~/.zshenv options like
-    # NOMATCH ignored.
-    #
-    emulate -L ksh
-
-    # source profile
-    if [ -f /etc/profile ]; then
-	    source /etc/profile
-    fi
-}
-_src_etc_profile
-
-unset -f _src_etc_profile
