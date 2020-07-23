@@ -13,7 +13,7 @@ elif [[ ! -d ~/.zplug ]]; then
 fi
 
 # init zplug 
-source $ZPLUG_HOME/init.zsh && zplug update --select
+source $ZPLUG_HOME/init.zsh && zplug update 
 # zplug plug begin
 zplug "zdharma/fast-syntax-highlighting"
 # zplug "zsh-users/zsh-autosuggestions"
