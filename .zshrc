@@ -1,4 +1,4 @@
-((!$+ZPLUG_HOME)) && source ./.zplug.zsh
+((!$+ZPLUG_HOME)) && source ~/.zplug.zsh
 
 # User configuration
 # ===特殊系统变量在 .zprofile 中定义===

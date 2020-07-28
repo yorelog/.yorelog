@@ -6,10 +6,13 @@ if [[ $OSTYPE == *darwin* ]]; then
         brew install zplug # use home brew to install zplug
         export ZPLUG_HOME=/usr/local/opt/zplug
     fi
-elif [[ ! -d ~/.zplug ]]; then
-  echo "Installing zplug to ~/.zplug \n"
-  git clone https://github.com/zplug/zplug ~/.zplug
-  export ZPLUG_HOME=~/.zplug
+fi
+if [[ $OSTYPE == *linux-gnu* ]]; then
+    export ZPLUG_HOME=~/.zplug
+    if [[ ! -d ~/.zplug ]]; then
+        echo "Installing zplug to ~/.zplug \n"
+        git clone https://github.com/zplug/zplug ~/.zplug
+    fi
 fi
 
 # init zplug 
