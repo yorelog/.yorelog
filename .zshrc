@@ -1,6 +1,4 @@
-((!$+ZPLUG_HOME)) && source ~/.zplug.zsh
-(($TERM_PROGRAM == vscode)) && source $HOME/.zplug.zsh
-
+source $HOME/.zplug.zsh
 # User configuration
 # ===特殊系统变量在 .zprofile 中定义===
 [ -f ~/.zprofile ] && source ~/.zprofile

@@ -16,7 +16,18 @@ if [[ $OSTYPE == *linux-gnu* ]]; then
 fi
 
 # init zplug 
-source $ZPLUG_HOME/init.zsh && zplug update 
+source $ZPLUG_HOME/init.zsh 
+# zplug update at the first time
+if [[ ! -e $ZPLUG_HOME/log/update.log ]]; then
+    echo "Update plugin for the first time"
+    zplug update
+fi
+# update zplug plugin if it not updated before yesterday
+if [ $(date -r $ZPLUG_HOME/log/update.log "+%Y%m%d") -le $(date -v-1d "+%Y%m%d") ]; then
+    echo "Zplug last update time " date -r $ZPLUG_HOME/log/update.log "+%Y%m%d"
+    zplug update
+fi
+
 # zplug plug begin
 zplug "zdharma/fast-syntax-highlighting"
 # zplug "zsh-users/zsh-autosuggestions"
