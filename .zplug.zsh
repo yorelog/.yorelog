@@ -22,9 +22,15 @@ if [[ ! -e $ZPLUG_HOME/log/update.log ]]; then
     echo "Update plugin for the first time"
     zplug update
 fi
-# update zplug plugin if it not updated before yesterday
-if [ $(date -r $ZPLUG_HOME/log/update.log "+%Y%m%d") -le $(date -v-1d "+%Y%m%d") ]; then
-    echo "Zplug last update time " date -r $ZPLUG_HOME/log/update.log "+%Y%m%d"
+# update zplug plugin once a week
+lastUpdateDay=$(date -r $ZPLUG_HOME/log/update.log "+%Y%m%d")
+lastUpdateWeek=$(date -r $ZPLUG_HOME/log/update.log "+%A")
+lastUpdateWeekNo=$(date -r $ZPLUG_HOME/log/update.log "+%V")
+
+todayWeekNo=$(date "+%V")
+echo "last update at "$lastUpdateDay " "$lastUpdateWeek
+if [[ $lastUpdateWeekNo -ne $todayWeekNo ]]; then
+    echo "last update at "$lastUpdateDay " "$lastUpdateWeek
     zplug update
 fi
 
