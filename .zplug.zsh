@@ -11,7 +11,7 @@ if [[ $OSTYPE == *linux-gnu* ]]; then
     export ZPLUG_HOME=~/.zplug
     if [[ ! -d ~/.zplug ]]; then
         echo "Installing zplug to ~/.zplug \n"
-        git clone https://github.com/zplug/zplug ~/.zplug
+        sh -c "$(git clone https://github.com/zplug/zplug ~/.zplug)"
     fi
 fi
 
@@ -28,9 +28,8 @@ lastUpdateWeek=$(date -r $ZPLUG_HOME/log/update.log "+%A")
 lastUpdateWeekNo=$(date -r $ZPLUG_HOME/log/update.log "+%V")
 
 todayWeekNo=$(date "+%V")
-echo "last update at "$lastUpdateDay " "$lastUpdateWeek
+echo "zplug last updated at "$lastUpdateDay " "$lastUpdateWeek
 if [[ $lastUpdateWeekNo -ne $todayWeekNo ]]; then
-    echo "last update at "$lastUpdateDay " "$lastUpdateWeek
     zplug update
 fi
 
