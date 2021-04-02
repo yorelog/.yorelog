@@ -9,33 +9,33 @@ filetype off                    " Reset filetype detection first ...
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 " colorschemes
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'https://hub.fastgit.org/rafi/awesome-vim-colorschemes'
 " NERDTree
-Plug 'scrooloose/nerdtree'
+Plug 'https://hub.fastgit.org/scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " UltiSnips
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
-Plug 'elzr/vim-json' 
+Plug 'https://hub.fastgit.org/elzr/vim-json' 
 " Plug 'vito-c/jq.vim' " json precessing
-Plug 'stephpy/vim-yaml'
+Plug 'https://hub.fastgit.org/stephpy/vim-yaml'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf.vim' " fantastic functions
-Plug 'junegunn/vim-easy-align'
+Plug 'https://hub.fastgit.org/junegunn/vim-easy-align'
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " Plug 'https://github.com/tmhedberg/SimpylFold'
 " Plug 'maralla/completor.vim' " complete framework
 " Plug 'easymotion/vim-easymotion' " easy move and apply change everywhere
-Plug 'fatih/vim-go' 
+Plug 'https://hub.fastgit.org/fatih/vim-go' 
 " Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
-Plug 'weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'https://hub.fastgit.org/neoclide/coc.nvim', {'branch': 'release'}
+Plug 'https://hub.fastgit.org/josa42/coc-go', {'do': 'yarn install --frozen-lockfile'}
+Plug 'https://hub.fastgit.org/weirongxu/coc-explorer', {'do': 'yarn install --frozen-lockfile'}
+Plug 'https://hub.fastgit.org/neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 "Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+Plug 'https://hub.fastgit.org/neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 " Plug 'arp242/gopher.vim' 
 "Plug 'skywind3000/asyncrun.vim'

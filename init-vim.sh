@@ -8,7 +8,7 @@ function version_lt() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)"
 
 echo  "install vim-plug"
  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        https://codechina.csdn.net/mirrors/junegunn/vim-plug/-/raw/master/plug.vim
 
 
 echo  "check the version of vim (plugin vim-go who gt than 1.4 need vim8)"
